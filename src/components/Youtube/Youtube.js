@@ -16,10 +16,9 @@ export default class Youtube extends Component {
             <div dangerouslySetInnerHTML={{ __html: iframeContent}}>
             </div>
             <div>
-                <img src={thumbnail.url} />
-                <div class="details">
+                <img  alt="the video thumbnail" src={thumbnail.url}/>
+                <div>
                     <h4>{title}</h4>
-                    <p>{'description'}</p>
                 </div>
             </div>
 

@@ -7,7 +7,6 @@ const URLbook = 'https://www.reddit.com/r/books/comments/';
 const item1 = '92q3ta/what_movies_are_better_than_the_books_they_are';
 const item2 = '1t972v/movies_vs_books';
 
-const URL1 = 'https://www.reddit.com/r/books/comments/92q3ta/what_movies_are_better_than_the_books_they_are/.json';
 // const LIMIT = '2';
 
 // const URL2 = 
@@ -66,7 +65,8 @@ export default class index extends Component {
       <div className="home">
       <div className="page-logo">
         <img style={{width: '200px'}} 
-        src="https://i.redd.it/11xxd4ji9e311.png">
+        src="https://i.redd.it/11xxd4ji9e311.png"
+        alt="reddit logo">
         </img>
         <a href="#" className="btn btn-blue" onClick={this.getReddit2}>Next topic</a>
       </div>

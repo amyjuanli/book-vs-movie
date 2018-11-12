@@ -1,51 +1,89 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom';
 import axios from 'axios';
 import Youtube from './Youtube';
 
-const URL = 'https://www.googleapis.com/youtube/v3/serach?';
+let count = 0; // video object index in the array
+
 const KEY = 'AIzaSyDq3kPPoW_ZkOIUKaFHTWhgeZXwi-k_8rg';
-// let playlistId = 'PL4cUxeGkcC9ibZ2TSBaGGNrgh4ZgYE6Cc';
-const QUERY = 'safeSearch=moderate&order=relevance&part=snippet&q=book+and+movie+which+is+better&maxResults=5';
+
 export default class index extends Component {
   constructor(props) {
     super(props)
   
     this.state = {
-       videos: []
+       videos: [],
+       video: {
+        videoId: "DYsNzgCDX64",
+        title: "The Jungle Book || Full Movie in Hindi 2016 Tarzan Ka Beta",
+        thumbnail: {
+          url: "https://i.ytimg.com/vi/DYsNzgCDX64/default.jpg"
+        }
+       },
     }
   }
-  loadVids = () => {
-    // https://www.googleapis.com/youtube/v3/search?safeSearch=moderate&order=relevance&part=snippet&q=book-movie&maxResults=5&key=AIzaSyDq3kPPoW_ZkOIUKaFHTWhgeZXwi-k_8rg
 
+  loadVids = () => {
     axios.get(`https://www.googleapis.com/youtube/v3/search?safeSearch=moderate&order=relevance&part=snippet&q=book-movie&maxResults=5&key=${KEY}`).then(response => {
       console.log(response.data.items);
-    
       this.setState({
-        videos: response.data.items
+        videos: response.data.items,
       })
     })
   }
-  
+
+  // initState = () => {
+  //   this.setState((prevState) => ({
+  //     video: {
+  //       videoId: prevState.videos[0].id.videoId,
+  //       title: prevState.videos[0].snippet.title,
+  //       thumbnail: prevState.videos[0].snippet.thumbnail.default 
+  //     }
+  //   }))
+  // }
+
+  getNextVideo = () => {
+    if(count < this.state.videos.length) {
+      let videoObj = this.state.videos[count];
+      this.setState({
+        video: {
+          videoId: videoObj.id.videoId, 
+          title: videoObj.snippet.title,
+          thumbnail: videoObj.snippet.thumbnails.default, 
+        }
+      })
+      count++;
+    } else {
+      count = 0;
+    }
+   
+  }
 
   componentDidMount() {
-    console.log('component mount')
+    // console.log('component mount')
     this.loadVids();
   }
   
   render() {
-    let videos = this.state.videos;
-    // let videoId = videos.videoId;
-    // let title = videos.snippet.title;
-    // let thumbnail = videos.snippet.thumbnails.default;
-    // let thumbnailUrl = thumbnail.url;
-    // let thumbnailWidth = thumbnail.width;
-    // let thumbnailHeight = thumbnail.height;
+    const {videoId, title, thumbnail} = this.state.video;
+    console.log('id', videoId)
     return (
-      <div>
-      {this.state.videos.map((video, idx) => (
-        <Youtube key={idx} videoId={video.id.videoId} title ={video.snippet.title} thumbnail= {video.snippet.thumbnails.default} />
-      ))}
-        
+      <div className="home">
+        <div className="page-logo">
+          <img style={{width: '200px'}} 
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Logo_of_YouTube_%282015-2017%29.svg/1280px-Logo_of_YouTube_%282015-2017%29.svg.png" 
+          alt="Youtube logo" />
+          <a href="#" className="btn btn-blue" onClick={this.getNextVideo}>Next video</a>
+          <div className="grid-container-youtube">
+            <div className="grid-item1-youtube">
+        <Link to="/reddit">Reddit </Link>
+        <i className="fa fa-angle-double-left arrow-icon"></i></div>
+        <div>
+        <Youtube videoId={videoId} title ={title} thumbnail= {thumbnail}/>
+        </div>
+        <div className="grid-item4-youtube"><Link to="/home"><i className="fa fa-angle-double-right arrow-icon"></i> Home</Link></div>
+        </div>
+      </div>
       </div>
     )
   }

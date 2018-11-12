@@ -66,6 +66,16 @@ body {
   padding-top: 50vh;
 }
 
+/* youtube page */
+.grid-container-youtube {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  grid-gap: 10px;
+}
+.grid-item1-youtube,
+.grid-item4-youtube {
+  padding-top: 50vh;
+}
 
 /* create a button to trigger the function to generate new data from api  */
 .btn:link,
