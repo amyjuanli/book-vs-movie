@@ -65,3 +65,46 @@ body {
 .grid-item4-reddit {
   padding-top: 50vh;
 }
+
+
+/* create a button to trigger the function to generate new data from api  */
+.btn:link,
+.btn:visited {
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 15px 40px;
+    display: inline-block; 
+    border-radius: 100px;
+    position: relative;
+    animation: moveInBottom .5s ease-out .7s;
+    animation-fill-mode: backwards;
+
+}
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0,0,0, 0.2) 
+}
+/* when button is clicked */
+.btn:active {
+    transform: translateY(-1px);
+}
+.btn-blue {
+   text-align: left;
+    background-color: #5fcf80;
+    color: white;
+}
+.btn::after {
+    content: '';
+    background-color: white;
+     width: 100%;
+    height: 100%; 
+    border-radius: 100px;
+    top: 0;
+    left: 0;
+    position: absolute;
+    z-index: -1;
+}
+.btn:hover::after {
+    transform: scaleX(1.4) scaleY(1.6);
+    opacity: 0;
+}

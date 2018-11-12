@@ -26,9 +26,6 @@ componentDidMount = () => {
 
 
   render() {
-    const arrowIconStyle = {
-        textAlign: 'left',
-    }
     return (
       <div className="home">
         <div className="grid-container">
@@ -38,7 +35,7 @@ componentDidMount = () => {
               <Quote key = {idx} className="grid-item" quote={quote}></Quote>
           ))
         }
-        <div className="grid-item4"><Link to="/reddit"><i className="fa fa-angle-double-right arrow-icon" style={arrowIconStyle}></i> Reddit</Link></div>
+        <div className="grid-item4"><Link to="/reddit"><i className="fa fa-angle-double-right arrow-icon"></i> Reddit</Link></div>
         <div className="grid-item5"><img src="http://4.bp.blogspot.com/--vVGyhWo610/VLcuSaQZROI/AAAAAAAAADg/6mYoDt05hJg/s1600/booksvsmovies.jpg" alt="movie vs book"/></div>
         </div>
       
