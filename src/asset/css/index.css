@@ -84,11 +84,12 @@ body {
     text-decoration: none;
     padding: 15px 40px;
     display: inline-block; 
+    margin-right: -100px;
     border-radius: 100px;
-    position: relative;
+    position: absolute;
+    left: 60vw;
     animation: moveInBottom .5s ease-out .7s;
     animation-fill-mode: backwards;
-
 }
 .btn:hover {
     transform: translateY(-3px);
@@ -118,3 +119,4 @@ body {
     transform: scaleX(1.4) scaleY(1.6);
     opacity: 0;
 }
+

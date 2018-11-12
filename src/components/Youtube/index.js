@@ -25,7 +25,7 @@ export default class index extends Component {
 
   loadVids = () => {
     axios.get(`https://www.googleapis.com/youtube/v3/search?safeSearch=moderate&order=relevance&part=snippet&q=book-movie&maxResults=5&key=${KEY}`).then(response => {
-      console.log(response.data.items);
+      // console.log(response.data.items);
       this.setState({
         videos: response.data.items,
       })
@@ -66,7 +66,7 @@ export default class index extends Component {
   
   render() {
     const {videoId, title, thumbnail} = this.state.video;
-    console.log('id', videoId)
+    // console.log('id', videoId)
     return (
       <div className="home">
         <div className="page-logo">
