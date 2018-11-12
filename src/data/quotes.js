@@ -11,10 +11,6 @@ export const quotes = [{
         author: "Stephen King",
     },
     {
-        quote: "Artists use frauds to make human beings seem more wonderful than they really are. Dancers show us human beings who move much more gracefully than human beings really move. Films and books and plays show us people talking much more entertainingly than people really talk, make paltry human enterprises seem important. Singers and musicians show us human beings making sounds far more lovely than human beings really make. Architects give us temples in which something marvelous is obviously going on. Actually, practically nothing is going on",
-        author: "Kurt Vonnegut",
-    },
-    {
         quote: "I’m all for whatever transitions the book properly to a movie.",
         author: "Gillian Flynn",
     },

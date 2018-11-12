@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import Home from './Home/index';
 import About from './About';
 import Reddit from './Reddit/index';
-import Youtube from './Youtube';
+import Youtube from './Youtube/index';
 
 import {
   BrowserRouter,
@@ -16,7 +16,6 @@ export default class App extends Component {
     return (
       <BrowserRouter>
         <div className="container">
-
         <Switch>
           <Route exact path="/" component={Home} />
           <Route path="/about" render={() => <About title="About"/>} />

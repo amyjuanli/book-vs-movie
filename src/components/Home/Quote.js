@@ -20,10 +20,10 @@ const buttonsStyle = {
   padding:'20px',
 }
 
-export default function Quote({quote}) {
+export default function Quote({quote, className}) {
   return (
-    <div id="quote-box" style={quoteBoxStyle}>
-      <div id="text" style={textStyle}>
+    <div id="quote-box" style={quoteBoxStyle} className={className}>
+     <div id="text" style={textStyle}>
         <span>{quote.quote}</span>
       </div>
       <div id="author" style={authorStyle}>

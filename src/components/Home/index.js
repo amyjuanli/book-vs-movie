@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import { quotes } from '../../data/quotes';
+import { Link } from 'react-router-dom';
 import Quote from './Quote';
 
 class Home extends Component {
@@ -32,15 +32,16 @@ componentDidMount = () => {
     return (
       <div className="home">
         <div className="grid-container">
+         <div className="grid-item1"></div>
         {
           this.state.quotes.map((quote, idx) => (
               <Quote key = {idx} className="grid-item" quote={quote}></Quote>
           ))
         }
-        <div className="grid-item3"><img src="http://4.bp.blogspot.com/--vVGyhWo610/VLcuSaQZROI/AAAAAAAAADg/6mYoDt05hJg/s1600/booksvsmovies.jpg" alt="movie vs book"/></div>
-      
+        <div className="grid-item4"><Link to="/reddit"><i className="fa fa-angle-double-right arrow-icon" style={arrowIconStyle}></i> Reddit</Link></div>
+        <div className="grid-item5"><img src="http://4.bp.blogspot.com/--vVGyhWo610/VLcuSaQZROI/AAAAAAAAADg/6mYoDt05hJg/s1600/booksvsmovies.jpg" alt="movie vs book"/></div>
         </div>
-      <i className="fa fa-angle-double-right arrow-icon" style={arrowIconStyle}></i> <Link to="/reddit">Reddit</Link>
+      
       </div>
     );
   }

@@ -1,6 +1,7 @@
 * {
   box-sizing: border-box;
 }
+
 body {
   height: 100vh;
   color: #576366;
@@ -11,34 +12,56 @@ body {
 .container {
   height: 100vh;
   width: 95%;
-  max-width: 780px;
+  max-width: 1100px;
   padding-bottom: 2em;
   margin: 0 auto 2em;
   background: #fff;
   border-radius: .5em;
-  box-shadow: 0 3px rgba(0,0,0, .1);
+  box-shadow: 0 3px rgba(0, 0, 0, .1);
   overflow: hidden;
 }
 
 .arrow-icon {
-  font-size: 36px;
+  font-size: 2em;
   vertical-align: middle;
 }
 
 .grid-container {
   display: grid;
-  grid-template-columns: auto auto;
+  grid-template-columns: auto auto auto auto;
   grid-gap: 10px;
 }
+
 .grid-item {
   width: 100%;
   height: 300px;
 }
 
-.grid-item3 {
+.grid-item1 {
+  grid-row: 1 / 3;
+}
+
+.grid-item4 {
+  padding-top: 50vh;
+  grid-row: 1 / 3;
+  grid-column: 4/5;
+}
+
+.grid-item5 {
   width: 100%;
   height: 200px;
-  grid-column-start: 1;
-  grid-column-end: 3;
+  grid-column: 2 / 4;
   text-align: center;
+}
+
+
+/* reddit page */
+.grid-container-reddit {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  grid-gap: 10px;
+}
+.grid-item1-reddit,
+.grid-item4-reddit {
+  padding-top: 50vh;
 }
