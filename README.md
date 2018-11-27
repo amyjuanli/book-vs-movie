@@ -1,3 +1,4 @@
+View live site at: <a href="https://bookvsmovie.netlify.com/">https://bookvsmovie.netlify.com/</a>
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
